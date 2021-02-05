@@ -1,0 +1,122 @@
+{
+    "name": "SonarQube",
+    "type": "executer",
+    "execProgram": "node",
+    "main": "app.js",
+    "exposeRoute": true,
+    "imgUrl": "sonarqube.png",
+    "version": "1.0.0",
+    "description": "Integration with SonarQube REST API",
+    "settings": [
+        {
+            "name": "SONAR_SCANNER",
+            "viewName": "Sonar Scanner",
+            "type": "string"
+        },
+        {
+            "name": "HOST_URL",
+            "viewName": "Host URL",
+            "type": "string"
+        },
+        {
+            "name": "LOGIN",
+            "viewName": "CLI Token",
+            "type": "vault"
+        },
+        {
+            "name": "restToken",
+            "viewName": "REST API Token",
+            "type": "vault"
+        }
+    ],
+    "methods": [
+        {
+            "name": "RUN_TEST",
+            "viewName": "Run test",
+            "params": [
+                {
+                    "name": "HOST_URL",
+                    "viewName": "Host URL",
+                    "type": "string"
+                },
+                {
+                    "name": "LOGIN",
+                    "viewName": "Login",
+                    "type": "vault"
+                },
+                {
+                    "name": "workDir",
+                    "viewName": "Working Directory",
+                    "type": "string"
+                },
+                {
+                    "name": "PROJECT_KEY",
+                    "viewName": "Project Key*",
+                    "type": "string"
+                },
+                {
+                    "name": "SOURCES",
+                    "viewName": "Sources Path*",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "CREATE_PROJECT",
+            "viewName": "Create Project",
+            "params": [
+                {
+                    "name": "HOST_URL",
+                    "viewName": "Host URL*",
+                    "type": "string"
+                },
+                {
+                    "name": "NAME",
+                    "viewName": "Project name*",
+                    "type": "string"
+                },
+                {
+                    "name": "ORGANIZATION",
+                    "viewName": "Organization*",
+                    "type": "string"
+                },
+                {
+                    "name": "PROJECT_KEY",
+                    "viewName": "Project key*",
+                    "type": "string"
+                },
+                {
+                    "name": "VISIBILITY",
+                    "viewName": "visibility",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "SEARCH_USERS",
+            "viewName": "Search Users",
+            "params": [
+                {
+                    "name": "HOST_URL",
+                    "viewName": "Host URL*",
+                    "type": "string"
+                },
+                {
+                    "name": "PAGE_NUMBER",
+                    "viewName": "Page number",
+                    "type": "integer"
+                },
+                {
+                    "name": "PAGE_SIZE",
+                    "viewName": "Page size(limit)",
+                    "type": "integer"
+                },
+                {
+                    "name": "SEARCH_TEXT",
+                    "viewName": "Search text",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

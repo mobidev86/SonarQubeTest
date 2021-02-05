@@ -1,0 +1,16 @@
+{
+  "name": "sonarqube",
+  "version": "1.0.0",
+  "description": "SonarCube plugin for Kaholo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SonarCube",
+  "license": "ISC",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "child_process": "^1.0.2",
+    "node-fetch": "^2.6.1"
+  }
+}
